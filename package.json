@@ -83,7 +83,7 @@
     "docs:build": "node config/version.js && gitbook build ./gitbook ./docs",
     "docs:install": "gitbook install ./gitbook",
     "lint": "eslint src test config",
-    "test": "npm run lint && npm run test:cover",
+    "test": "npm run lint",
     "test:cover": "BABEL_ENV=test karma start config/karma.cover.conf.js",
     "test:unit": "BABEL_ENV=test karma start config/karma.unit.conf.js"
   },
