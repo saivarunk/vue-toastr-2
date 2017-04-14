@@ -1,6 +1,7 @@
 const toastr = require('toastr')
 
 function plugin (Vue, options = {}) {
+  Vue.prototype.$toastr = {}
   Vue.prototype.$toastr.warning = (message) => {
     toastr.warning(message)
   }
