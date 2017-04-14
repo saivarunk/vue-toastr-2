@@ -1,7 +1,7 @@
 {
   "name": "vue-toastr-2",
   "description": "Simple toast notifications for Vue.js",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": {
     "name": "Varun",
     "email": "saivarunk@gmail.com"
