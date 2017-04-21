@@ -3,12 +3,13 @@ const buble = require('rollup-plugin-buble')
 const banner = require('./banner')
 const pack = require('../package.json')
 
-function toUpper (_, c) {
+function toUpper(_, c) {
   return c ? c.toUpperCase() : ''
 }
 
 const classifyRE = /(?:^|[-_\/])(\w)/g
-function classify (str) {
+
+function classify(str) {
   return str.replace(classifyRE, toUpper)
 }
 const moduleName = classify(pack.name)
@@ -44,7 +45,7 @@ const entries = {
   }
 }
 
-function genConfig (opts) {
+function genConfig(opts) {
   const config = {
     entry: opts.entry,
     dest: opts.dest,
@@ -56,7 +57,9 @@ function genConfig (opts) {
     ]
   }
 
-  const replacePluginOptions = { '__VERSION__': pack.version }
+  const replacePluginOptions = {
+    '__VERSION__': pack.version
+  }
   if (opts.env) {
     replacePluginOptions['process.env.NODE_ENV'] = JSON.stringify(opts.env)
   }

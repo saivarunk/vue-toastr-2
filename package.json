@@ -53,6 +53,7 @@
   "files": [
     "dist/vue-toastr-2.js",
     "dist/vue-toastr-2.min.js",
+    "dist/vue-toastr-2.min.css",
     "dist/vue-toastr-2.common.js",
     "src"
   ],

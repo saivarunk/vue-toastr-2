@@ -8,7 +8,7 @@ const uglify = require('uglify-js')
 
 module.exports = build
 
-function build (entries) {
+function build(entries) {
   let built = 0
   const total = entries.length
   const next = () => {
@@ -22,7 +22,7 @@ function build (entries) {
   next()
 }
 
-function buildEntry (config) {
+function buildEntry(config) {
   const isProd = /min\.js$/.test(config.dest)
   return rollup.rollup(config).then(bundle => {
     const code = bundle.generate(config).code
@@ -44,23 +44,29 @@ function buildEntry (config) {
   })
 }
 
-function write (dest, code) {
-  return new Promise(function (resolve, reject) {
-    writeFile(dest, code, function (err) {
-      if (err) { return reject(err) }
+function write(dest, code) {
+  return new Promise(function(resolve, reject) {
+    writeFile(dest, code, function(err) {
+      if (err) {
+        return reject(err)
+      }
       console.log(blue(relative(process.cwd(), dest)) + ' ' + getSize(code))
       resolve()
     })
   })
 }
 
-function zip (file) {
-  return function () {
-    return new Promise(function (resolve, reject) {
-      readFile(file, function (err, buf) {
-        if (err) { return reject(err) }
-        gzip(buf, function (err, buf) {
-          if (err) { return reject(err) }
+function zip(file) {
+  return function() {
+    return new Promise(function(resolve, reject) {
+      readFile(file, function(err, buf) {
+        if (err) {
+          return reject(err)
+        }
+        gzip(buf, function(err, buf) {
+          if (err) {
+            return reject(err)
+          }
           write(file + '.gz', buf).then(resolve)
         })
       })
@@ -68,14 +74,14 @@ function zip (file) {
   }
 }
 
-function getSize (code) {
+function getSize(code) {
   return (code.length / 1024).toFixed(2) + 'kb'
 }
 
-function logError (e) {
+function logError(e) {
   console.log(e)
 }
 
-function blue (str) {
+function blue(str) {
   return '\x1b[1m\x1b[34m' + str + '\x1b[39m\x1b[22m'
 }
