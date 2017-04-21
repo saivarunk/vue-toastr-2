@@ -42,6 +42,7 @@
     "power-assert": "^1.4.2",
     "rollup": "^0.36.4",
     "rollup-plugin-buble": "^0.14.0",
+    "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-replace": "^1.1.1",
     "toastr": "^2.1.2",
     "uglify-js": "^2.7.5",
@@ -82,9 +83,5 @@
     "test": "npm run lint",
     "test:cover": "BABEL_ENV=test karma start config/karma.cover.conf.js",
     "test:unit": "BABEL_ENV=test karma start config/karma.unit.conf.js"
-  },
-  "dependencies": {
-    "jquery": "^3.2.1",
-    "toastr": "^2.1.2"
   }
 }

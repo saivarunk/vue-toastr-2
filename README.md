@@ -20,6 +20,7 @@ Include vue-toastr-2 after Vue and it will install itself automatically:
 ```html
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 <script src="https://unpkg.com/vue-toastr-2/dist/vue-toastr-2.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/vue-toastr-2/dist/vue-toastr-2.min.css">
 ```
 
 ### NPM
@@ -35,6 +36,7 @@ When used with a module system, you must explicitly install the `vue-toastr-2` v
 ```javascript
 import Vue from 'vue'
 import VueToastr2 from 'vue-toastr-2'
+import 'vue-toastr-2/dist/vue-toastr-2.min.css'
 
 Vue.use(VueToastr2)
 ```

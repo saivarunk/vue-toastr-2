@@ -1,4 +1,5 @@
-const toastr = require('toastr')
+import './jquery.min.js'
+import './toastr.min.js'
 
 function plugin (Vue, options = {}) {
   if (options) {

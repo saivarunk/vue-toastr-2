@@ -2,6 +2,7 @@ const replace = require('rollup-plugin-replace')
 const buble = require('rollup-plugin-buble')
 const banner = require('./banner')
 const pack = require('../package.json')
+const resolve = require('rollup-plugin-node-resolve')
 
 function toUpper(_, c) {
   return c ? c.toUpperCase() : ''
@@ -17,18 +18,30 @@ const moduleName = classify(pack.name)
 const entries = {
   commonjs: {
     entry: 'src/index.js',
+    plugins: [ resolve({
+      module: true,
+      browser: true
+    }) ],
     dest: `dist/${pack.name}.common.js`,
     format: 'cjs',
     banner
   },
   esm: {
     entry: 'src/index.js',
+    plugins: [ resolve({
+      module: true,
+      browser: true
+    }) ],
     dest: `dist/${pack.name}.esm.js`,
     format: 'es',
     banner
   },
   production: {
     entry: 'src/index.js',
+    plugins: [ resolve({
+      module: true,
+      browser: true
+    }) ],
     dest: `dist/${pack.name}.min.js`,
     format: 'umd',
     env: 'production',
@@ -37,6 +50,10 @@ const entries = {
   },
   development: {
     entry: 'src/index.js',
+    plugins: [ resolve({
+      module: true,
+      browser: true
+    })],
     dest: `dist/${pack.name}.js`,
     format: 'umd',
     env: 'development',
