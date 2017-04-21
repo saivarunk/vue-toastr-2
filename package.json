@@ -1,7 +1,7 @@
 {
   "name": "vue-toastr-2",
   "description": "Simple toast notifications for Vue.js",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "author": {
     "name": "Varun",
     "email": "saivarunk@gmail.com"
@@ -24,7 +24,6 @@
     "eslint-config-vue": "^2.0.2",
     "eslint-loader": "^1.6.1",
     "eslint-plugin-vue": "^2.0.0",
-    "gitbook-cli": "^2.3.0",
     "html-webpack-plugin": "^2.19.0",
     "karma": "^1.4.1",
     "karma-chrome-launcher": "^2.0.0",
@@ -77,12 +76,8 @@
   "scripts": {
     "build": "node config/build.js",
     "changelog": "conventional-changelog -i CHANGELOG.md -s -p atom",
-    "release": "conventional-github-releaser -p atom",
     "clean": "rm -rf coverage && rm -rf dist/*.js* && rm ./*.log",
     "dev": "BABEL_ENV=test webpack-dev-server --inline --hot --open --content-base ./test/unit/ --config config/webpack.dev.conf.js",
-    "docs": "gitbook serve ./gitbook ./docs",
-    "docs:build": "node config/version.js && gitbook build ./gitbook ./docs",
-    "docs:install": "gitbook install ./gitbook",
     "lint": "eslint src test config",
     "test": "npm run lint",
     "test:cover": "BABEL_ENV=test karma start config/karma.cover.conf.js",
