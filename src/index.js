@@ -1,3 +1,6 @@
+/* global toastr:true*/
+/* eslint no-undef: "error"*/
+
 import './jquery.min.js'
 import './toastr.min.js'
 

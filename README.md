@@ -3,7 +3,7 @@
 [![npm](https://img.shields.io/npm/v/vue-toastr-2.svg)](https://www.npmjs.com/package/vue-toastr-2)
 [![npm](https://img.shields.io/npm/dm/vue-simple-upload.svg)](https://www.npmjs.com/package/vue-toastr-2)
 [![vue2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
-[![BuildStatus](https://secure.travis-ci.org/saivarunk/vue-toastr2.png?branch=master)](https://travis-ci.org/saivarunk/vue-toastr2)
+[![BuildStatus](https://secure.travis-ci.org/saivarunk/vue-toastr-2.png?branch=master)](https://travis-ci.org/saivarunk/vue-toastr-2)
 
 Simple toast notifications for Vue.js
 
