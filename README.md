@@ -25,18 +25,31 @@ Include vue-toastr-2 after Vue and it will install itself automatically:
 
 ### NPM
 
-    $ npm install vue-toastr-2
+These dependencies are required to use vue-toastr-2 while using npm
 
+- jquery
+- toastr
+
+```
+$ npm install jquery
+$ npm install toastr
+$ npm install vue-toastr-2
+```
 ### Yarn
 
-    $ yarn add vue-toastr-2
-
+```
+$ yarn add jquery
+$ yarn add toastr
+$ yarn add vue-toastr-2
+```
 When used with a module system, you must explicitly install the `vue-toastr-2` via `Vue.use()`:
 
 ```javascript
 import Vue from 'vue'
 import VueToastr2 from 'vue-toastr-2'
 import 'vue-toastr-2/dist/vue-toastr-2.min.css'
+
+window.toastr = require('toastr')
 
 Vue.use(VueToastr2)
 ```
@@ -46,6 +59,8 @@ You don't need to do this when using global script tags.
 # Usage
 
 The notifications can be triggered from the components using this.$toastr property.
+
+For documentation of options, look at [toastr](https://www.npmjs.com/package/toastr)
 
 ## Success
 
